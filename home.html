@@ -74,6 +74,78 @@
     <a href="#">Donate</a>
     <a href="#">Contact</a>
 </nav>
+<div class="section-divider"></div>
+<section class="content-section fade-in-up">
+    <div class="section-container">
+        <h2 class="section-title fade-in-up">What We Do</h2>
+        <p class="section-subtitle fade-in-up">We are the heart of the community</p>
+
+        <div class="marquee-wrapper">
+            <div class="features-grid marquee-track">
+                <div class="feature-item">
+                    <i class="fas fa-basketball-ball"></i>
+                    <h3>Sporting Events</h3>
+                    <p>From championship basketball games to wrestling tournaments, we host the most exciting athletic events in the region.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-music"></i>
+                    <h3>Concerts & Shows</h3>
+                    <p>Experience unforgettable performances from world-renowned artists and local talents in our acoustically optimized arena.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Community Gatherings</h3>
+                    <p>We provide a versatile space for trade shows, graduation ceremonies, and community-focused events of all sizes.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>Art & Exhibitions</h3>
+                    <p>Discover a vibrant array of art installations, cultural exhibitions, and creative showcases throughout the year.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-microphone-alt"></i>
+                    <h3>Conferences & Seminars</h3>
+                    <p>Our adaptable spaces are perfect for hosting large-scale conferences, corporate meetings, and educational seminars.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Culinary Festivals</h3>
+                    <p>Indulge in diverse flavors at our food and beverage festivals, featuring local chefs and international cuisines.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-basketball-ball"></i>
+                    <h3>Sporting Events</h3>
+                    <p>From championship basketball games to wrestling tournaments, we host the most exciting athletic events in the region.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-music"></i>
+                    <h3>Concerts & Shows</h3>
+                    <p>Experience unforgettable performances from world-renowned artists and local talents in our acoustically optimized arena.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Community Gatherings</h3>
+                    <p>We provide a versatile space for trade shows, graduation ceremonies, and community-focused events of all sizes.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>Art & Exhibitions</h3>
+                    <p>Discover a vibrant array of art installations, cultural exhibitions, and creative showcases throughout the year.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-microphone-alt"></i>
+                    <h3>Conferences & Seminars</h3>
+                    <p>Our adaptable spaces are perfect for hosting large-scale conferences, corporate meetings, and educational seminars.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Culinary Festivals</h3>
+                    <p>Indulge in diverse flavors at our food and beverage festivals, featuring local chefs and international cuisines.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <div class="container">
     <h2>Our Mission</h2>
     <p>
@@ -91,4 +163,189 @@
     &copy; 2024 Medkits for Hope. All rights reserved.
 </footer>
 </body>
+<script>
+    function toggleMenu() {
+      document.querySelector('.nav-links').classList.toggle('active');
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      // Newsletter form success popup
+      const form = document.querySelector(".newsletter-form");
+      const popup = document.getElementById("subscriptionSuccess");
+
+      if (form) {
+        form.addEventListener("submit", function (e) {
+          e.preventDefault(); // Prevent form from submitting
+          if (popup) {
+            popup.style.display = "flex";
+            setTimeout(() => {
+              popup.style.display = "none";
+            }, 3000);
+          }
+          form.reset();
+        });
+      }
+
+      // --- TYPEWRITER ANIMATION SCRIPT ---
+      const heroTitleEl = document.getElementById('hero-title');
+      const heroSubtitleEl = document.getElementById('hero-subtitle');
+
+      const titleText = "Welcome to Husky's Legacy Arena";
+      const subtitleText = "Where Every Event Makes Memories!";
+      const typeSpeed = 50; // Milliseconds per character
+      const subtitleDelay = 500; // Delay before subtitle starts typing
+
+      // Clear initial text
+      heroTitleEl.innerHTML = '';
+      heroSubtitleEl.innerHTML = '';
+
+      // Add cursor to title initially for immediate visibility
+      heroTitleEl.innerHTML = '<span class="cursor"></span>';
+
+      function typewriter(element, text, callback) {
+        let i = 0;
+        element.innerHTML = ''; // Clear element before typing
+        const cursorSpan = '<span class="cursor"></span>';
+
+        function type() {
+          if (i < text.length) {
+            element.innerHTML = text.substring(0, i + 1) + cursorSpan;
+            i++;
+            setTimeout(type, typeSpeed);
+          } else {
+            // Remove cursor blinking from the current element once typing is complete
+            element.innerHTML = text;
+            if (callback) callback();
+          }
+        }
+        type();
+      }
+
+      // Start typing title, then subtitle
+      typewriter(heroTitleEl, titleText, () => {
+        setTimeout(() => {
+          typewriter(heroSubtitleEl, subtitleText);
+        }, subtitleDelay);
+      });
+
+      // --- NEW: IMAGE FLOW ANIMATION (for purchasing system image) ---
+      const imgContainer = document.getElementById('purchasing-system-image-container');
+      const targetImage = document.getElementById('purchasing-system-image');
+
+      if (imgContainer && targetImage) {
+        const sensitivity = 20; // How much the image tilts (degrees)
+        const depth = 30; // How much the image moves forward/backward (pixels)
+
+        imgContainer.addEventListener('mousemove', (e) => {
+          const { left, top, width, height } = imgContainer.getBoundingClientRect();
+          const x = e.clientX - left; // X position within the element.
+          const y = e.clientY - top;  // Y position within the element.
+
+          // Normalize x and y to a range of -0.5 to 0.5
+          const normalizeX = (x / width) - 0.5;
+          const normalizeY = (y / height) - 0.5;
+
+          // Calculate rotation and translation based on normalized position
+          const rotateX = -normalizeY * sensitivity; // Invert Y for natural tilt
+          const rotateY = normalizeX * sensitivity;
+          const translateX = normalizeX * depth;
+          const translateY = normalizeY * depth;
+
+          targetImage.style.transform = `scale(1.05) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(${depth}px) translateX(${translateX}px) translateY(${translateY}px)`;
+          targetImage.style.transition = 'transform 0.1s ease-out'; // Quick transition for smoothness
+        });
+
+        imgContainer.addEventListener('mouseleave', () => {
+          targetImage.style.transform = `scale(1) rotateX(0deg) rotateY(0deg) translateZ(0px) translateX(0px) translateY(0px)`;
+          targetImage.style.transition = 'transform 0.4s ease-out'; // Slower transition back
+        });
+      }
+
+      // --- NEW: HORIZONTAL SCROLL ANIMATION (Parallax for sections) ---
+      const featuresGrid = document.querySelector('.features-grid');
+      const choiceGrid = document.querySelector('.choice-grid');
+
+      const setupHorizontalParallax = (gridElement) => {
+        if (!gridElement) return;
+
+        const parentSection = gridElement.closest('.content-section');
+        if (!parentSection) return;
+
+        const parallaxSpeed = 0.2; // Adjust this value to control scroll speed
+
+        // Set initial transform
+        gridElement.style.transform = `translateX(0px)`;
+        gridElement.style.willChange = 'transform'; // Optimize for animation
+
+        const handleScroll = () => {
+          const sectionRect = parentSection.getBoundingClientRect();
+          const viewportHeight = window.innerHeight;
+
+          // Calculate visibility percentage: 0 when fully out of view below, 1 when fully out of view above
+          // Clamping between -1 and 2 to give some buffer
+          let scrollProgress = (viewportHeight - sectionRect.top) / (viewportHeight + sectionRect.height);
+          scrollProgress = Math.max(-0.5, Math.min(1.5, scrollProgress)); // Clamp for a range of visibility
+
+          // Adjust the multiplier based on the desired scroll range
+          // For 'average readable speed', this will be a fraction of the total width
+          const maxScroll = (gridElement.scrollWidth - gridElement.clientWidth);
+
+          // Ensure maxScroll is not negative if content is smaller than container
+          const effectiveMaxScroll = Math.max(0, maxScroll);
+
+          const parallaxAmount = effectiveMaxScroll * (scrollProgress - 0.5) * parallaxSpeed; // Center scroll at 0.5 visibility
+
+          gridElement.style.transform = `translateX(${-parallaxAmount}px)`;
+        };
+
+        // Initial call to set position correctly on load
+        handleScroll();
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('resize', handleScroll); // Recalculate on resize
+      };
+
+      // Apply parallax only if screen is wide enough
+      if (window.innerWidth > 992) { // Match CSS media query breakpoint
+        setupHorizontalParallax(featuresGrid);
+        setupHorizontalParallax(choiceGrid);
+      } else {
+        // Ensure no lingering transforms if resized from large to small
+        if (featuresGrid) featuresGrid.style.transform = 'translateX(0)';
+        if (choiceGrid) choiceGrid.style.transform = 'translateX(0)';
+      }
+
+      // Re-evaluate parallax on resize
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 992) {
+          setupHorizontalParallax(featuresGrid);
+          setupHorizontalParallax(choiceGrid);
+        } else {
+          if (featuresGrid) featuresGrid.style.transform = 'translateX(0)';
+          if (choiceGrid) choiceGrid.style.transform = 'translateX(0)';
+        }
+      });
+
+    });
+
+    // Chatbase script
+    (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="b58IOkitAUZ4h2CuPN8Dx";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+
+    /* ─── 1.  Clone marquee content once so the loop is seamless ─── */
+    document.querySelectorAll('.marquee-track').forEach(track=>{
+      track.innerHTML += track.innerHTML;   // duplicate children once
+    });
+
+    /* ─── 2.  IntersectionObserver for fade-in-up elements ───────── */
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target); // animate once
+        }
+      });
+    },{threshold:0.15});
+
+    document.querySelectorAll('.fade-in-up').forEach(el=>observer.observe(el));
+
+</script>
 </html>
