@@ -1,110 +1,244 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hands of Hope</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <script src="https://unpkg.com/@popmotion/popmotion/dist/popmotion.global.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/framer-motion/dist/framer-motion.umd.js"></script>
+    <title>Hands of Hope - Empowering Communities</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap" rel="stylesheet">
+
     <style>
-        .fade-in {
-          opacity: 0;
-          transform: translateY(20px);
-          animation: fadeInUp 1s ease-out forwards;
+        /* Custom styles for typography and animations */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8fafc; /* Softer background color: slate-50 */
         }
-        @keyframes fadeInUp {
-          to {
+
+        /* Animation class setup */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .scroll-animate.is-visible {
             opacity: 1;
             transform: translateY(0);
-          }
+        }
+
+        /* Staggered animation delay helper classes */
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+        .delay-400 { transition-delay: 400ms; }
+        .delay-500 { transition-delay: 500ms; }
+
+        /* Custom shadow for a cleaner look */
+        .clean-shadow {
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+        }
+        .clean-shadow-hover:hover {
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.07), 0 4px 6px -4px rgb(0 0 0 / 0.07);
         }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body class="text-slate-700">
+
 <!-- Header -->
-<header class="bg-red-700 text-white p-6">
-    <div class="max-w-6xl mx-auto flex justify-between items-center">
-        <h1 class="text-2xl font-bold">Hands of Hope</h1>
-        <nav class="space-x-4">
-            <a href="#about" class="hover:underline">About</a>
-            <a href="#programs" class="hover:underline">Programs</a>
-            <a href="#donate" class="hover:underline">Donate</a>
-            <a href="#contact" class="hover:underline">Contact</a>
-        </nav>
+<header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="flex justify-between items-center h-20">
+            <a href="#" class="flex items-center gap-3 text-2xl font-bold text-red-600">
+                <img src="http://googleusercontent.com/file_content/1" alt="Hands of Hope Logo" class="h-12">
+                <span>Hands of Hope</span>
+            </a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#about" class="text-slate-600 hover:text-red-600 transition-colors duration-300">About</a>
+                <a href="#programs" class="text-slate-600 hover:text-red-600 transition-colors duration-300">Programs</a>
+                <a href="#contact" class="text-slate-600 hover:text-red-600 transition-colors duration-300">Contact</a>
+                <a href="#donate" class="bg-red-600 text-white px-5 py-2 rounded-lg font-semibold hover:bg-red-700 transition-all duration-300 transform hover:scale-105">
+                    Donate
+                </a>
+            </nav>
+            <!-- Mobile Menu Button can be added here -->
+        </div>
     </div>
 </header>
 
 <!-- Hero Section -->
-<section class="bg-white py-20 fade-in">
-    <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-4xl font-bold mb-4">Empowering Communities, Changing Lives</h2>
-        <p class="mb-6 text-lg">Hands of Hope is a youth-led nonprofit organization aimed at restoring health and hygiene in the Greater Salt Lake Area by providing essential medical kits and hygiene kits to those in need. With compassion, outreach, and action, we aim to bring not only supplies but hope.</p>
-        <a href="#donate" class="bg-red-600 text-white px-6 py-3 rounded hover:bg-red-700 transition duration-300">Donate Now</a>
+<section class="relative bg-white overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 py-24 md:py-32">
+        <div class="text-center">
+            <h2 class="text-4xl md:text-6xl font-extrabold text-slate-900 tracking-tight scroll-animate">
+                Empowering Communities,
+                <br>
+                <span class="text-red-600">Changing Lives.</span>
+            </h2>
+            <p class="mt-6 max-w-2xl mx-auto text-lg text-slate-600 scroll-animate delay-200">
+                Hands of Hope is a youth-led nonprofit restoring health and hygiene in the Greater Salt Lake Area by providing essential medical and hygiene kits to those in need.
+            </p>
+            <div class="mt-10 flex justify-center gap-x-6 scroll-animate delay-400">
+                <a href="#donate" class="bg-red-600 text-white px-8 py-3 rounded-lg font-semibold text-lg hover:bg-red-700 transition-all duration-300 transform hover:scale-105">
+                    Donate Now
+                </a>
+                <a href="#about" class="bg-slate-100 text-slate-700 px-8 py-3 rounded-lg font-semibold text-lg hover:bg-slate-200 transition-all duration-300 transform hover:scale-105">
+                    Learn More
+                </a>
+            </div>
+        </div>
     </div>
 </section>
 
 <!-- About Section -->
-<section id="about" class="py-16 bg-gray-50 fade-in">
-    <div class="max-w-5xl mx-auto px-4">
-        <h3 class="text-3xl font-bold mb-4">About Us</h3>
-        <p class="text-lg">Hands of Hope is a 501(c)(3) nonprofit organization dedicated to creating sustainable solutions to poverty and inequity. We partner with local leaders, volunteers, and donors to deliver programs that meet critical needs.</p>
-        <p class="mt-4 text-lg font-semibold">Our Vision</p>
-        <p class="text-lg">A community where student-led action creates a lasting impact, ensuring that no one in the Greater Salt Lake Area shelters goes without the basic medical and hygiene care they deserve.</p>
-        <p class="mt-8 text-2xl font-bold">Our Story</p>
-        <p class="mt-2 text-lg">Hands of Hope is a student-led organization made up of high schoolers from Bingham High School, Corner Canyon High School, and Hillcrest High School in South Jordan, Utah. We came together after recognizing a growing need around the Greater Salt Lake Area—people experiencing homelessness without access to even the most basic necessities like medical kits, blankets, and hygiene supplies.</p>
-        <p class="mt-2 text-lg">We saw that local shelters are doing their best, but many struggle to keep up due to limited resources. As students, we knew we couldn’t ignore the problem—so we decided to take action.</p>
-        <p class="mt-2 text-lg">So we created a student-run nonprofit to help fill that gap.</p>
-        <p class="mt-2 text-lg">What started as a small idea between friends is now a growing effort led entirely by high school students who are committed to making a difference—right here at home. We believe that even though we’re young, we can take real action and bring our community together to support those who need it most.</p>
+<section id="about" class="py-20 md:py-28 bg-slate-50">
+    <div class="max-w-5xl mx-auto px-6 space-y-12">
+        <div class="text-center scroll-animate">
+            <h3 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">Our Story</h3>
+            <p class="mt-4 max-w-3xl mx-auto text-lg text-slate-600">
+                A student-led initiative to bring hope and essential supplies to the most vulnerable in our community.
+            </p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-4 scroll-animate delay-200">
+                <p class="text-lg text-slate-600">
+                    Hands of Hope is a 501(c)(3) nonprofit organization made up of high schoolers from Bingham, Corner Canyon, and Hillcrest High Schools. We came together after recognizing a critical need: people experiencing homelessness in the Greater Salt Lake Area often lack access to basic medical and hygiene supplies.
+                </p>
+                <p class="text-lg text-slate-600">
+                    While local shelters work tirelessly, their resources are stretched thin. As students, we felt a responsibility to act. What started as a small idea is now a growing, student-run movement committed to making a tangible difference, right here at home.
+                </p>
+            </div>
+            <div class="scroll-animate delay-400">
+                <img src="https://placehold.co/600x400/ef4444/ffffff?text=Our+Team" alt="Volunteers packing kits" class="rounded-xl object-cover w-full h-full clean-shadow">
+            </div>
+        </div>
     </div>
 </section>
 
 <!-- Programs Section -->
-<section id="programs" class="py-16 fade-in">
-    <div class="max-w-5xl mx-auto px-4">
-        <h3 class="text-3xl font-bold mb-8 text-center">Our Programs</h3>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="bg-white p-6 rounded shadow transform transition duration-500 hover:scale-105">
-                <h4 class="text-xl font-semibold mb-2">Food Distribution</h4>
-                <p>Providing weekly food boxes to families in need through community centers and mobile pantries.</p>
+<section id="programs" class="py-20 md:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center scroll-animate">
+            <h3 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">What We Provide</h3>
+            <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-600">
+                We focus on delivering essential kits that provide comfort, health, and hope.
+            </p>
+        </div>
+        <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Program Card 1 -->
+            <div class="bg-slate-50 p-8 rounded-xl clean-shadow clean-shadow-hover transform transition-all duration-300 hover:-translate-y-2 scroll-animate delay-100">
+                <h4 class="text-2xl font-bold text-slate-800">Medical Kits</h4>
+                <p class="mt-3 text-slate-600">Basic first-aid supplies like bandages, antiseptic wipes, and pain relievers to treat minor injuries and prevent infection.</p>
             </div>
-            <div class="bg-white p-6 rounded shadow transform transition duration-500 hover:scale-105">
-                <h4 class="text-xl font-semibold mb-2">Youth Education</h4>
-                <p>Offering free tutoring, after-school programs, and scholarships for underserved youth.</p>
+            <!-- Program Card 2 -->
+            <div class="bg-slate-50 p-8 rounded-xl clean-shadow clean-shadow-hover transform transition-all duration-300 hover:-translate-y-2 scroll-animate delay-300">
+                <h4 class="text-2xl font-bold text-slate-800">Hygiene Kits</h4>
+                <p class="mt-3 text-slate-600">Toothbrushes, toothpaste, soap, and other personal care items to maintain health and restore dignity.</p>
             </div>
-            <div class="bg-white p-6 rounded shadow transform transition duration-500 hover:scale-105">
-                <h4 class="text-xl font-semibold mb-2">Health Access</h4>
-                <p>Hosting free clinics, mental health workshops, and healthcare navigation services.</p>
+            <!-- Program Card 3 -->
+            <div class="bg-slate-50 p-8 rounded-xl clean-shadow clean-shadow-hover transform transition-all duration-300 hover:-translate-y-2 scroll-animate delay-500">
+                <h4 class="text-2xl font-bold text-slate-800">Community Outreach</h4>
+                <p class="mt-3 text-slate-600">Partnering with local shelters and organizations to distribute kits and connect individuals with further resources.</p>
             </div>
         </div>
     </div>
 </section>
 
 <!-- Donate Section -->
-<section id="donate" class="py-16 bg-red-100 fade-in">
-    <div class="max-w-4xl mx-auto text-center px-4">
-        <h3 class="text-3xl font-bold mb-4">Support Our Mission</h3>
-        <p class="mb-6 text-lg">Your donation helps provide critical support to those who need it most. Every dollar makes a difference.</p>
-        <a href="https://www.gofundme.com/f/hands-of-hope-hygiene-medical-kits-for-the-homeless?attribution_id=sl:db04c373-00e8-4fff-ab30-58d657abff5d&lang=en_US&ts=1752646051&utm_campaign=man_sharesheet_dash&utm_content=amp13_c-amp14_t2-amp15_t1&utm_medium=customer&utm_source=copy_link&v=amp14_t2" target="_blank" class="bg-red-700 text-white px-6 py-3 rounded hover:bg-red-800 transition duration-300">Make a Donation</a>
+<section id="donate" class="py-20 md:py-28 bg-red-50">
+    <div class="max-w-4xl mx-auto text-center px-6 scroll-animate">
+        <h3 class="text-3xl md:text-4xl font-bold text-red-900 tracking-tight">Support Our Mission</h3>
+        <p class="mt-4 text-lg text-red-800/80">Your donation helps provide critical support to those who need it most. Every dollar makes a difference and is fully tax-deductible.</p>
+        <div class="mt-8">
+            <a href="https://www.gofundme.com/f/hands-of-hope-hygiene-medical-kits-for-the-homeless" target="_blank" class="bg-red-600 text-white px-10 py-4 rounded-lg font-bold text-xl hover:bg-red-700 transition-all duration-300 transform hover:scale-105 inline-block">
+                Make a Donation
+            </a>
+        </div>
     </div>
 </section>
 
 <!-- Contact Section -->
-<section id="contact" class="py-16 fade-in">
-    <div class="max-w-4xl mx-auto px-4">
-        <h3 class="text-3xl font-bold mb-4 text-center">Contact Us</h3>
-        <form class="space-y-4 max-w-lg mx-auto">
-            <input type="text" placeholder="Name" class="w-full p-3 border rounded" />
-            <input type="email" placeholder="Email" class="w-full p-3 border rounded" />
-            <textarea placeholder="Your Message" class="w-full p-3 border rounded h-32"></textarea>
-            <button type="submit" class="bg-red-700 text-white px-6 py-3 rounded hover:bg-red-800 transition duration-300">Send Message</button>
-        </form>
+<section id="contact" class="py-20 md:py-28 bg-white">
+    <div class="max-w-4xl mx-auto px-6 scroll-animate">
+        <div class="text-center">
+            <h3 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">Get In Touch</h3>
+            <p class="mt-4 text-lg text-slate-600">Have questions or want to get involved? We'd love to hear from you.</p>
+        </div>
+        <div class="mt-12 max-w-xl mx-auto">
+            <form class="space-y-6">
+                <input type="text" placeholder="Your Name" class="w-full p-4 border-slate-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition" />
+                <input type="email" placeholder="Your Email" class="w-full p-4 border-slate-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition" />
+                <textarea placeholder="Your Message" class="w-full p-4 border-slate-300 rounded-lg h-36 focus:ring-2 focus:ring-red-500 focus:border-red-500 transition"></textarea>
+                <button type="submit" class="w-full bg-red-600 text-white px-6 py-4 rounded-lg font-semibold text-lg hover:bg-red-700 transition-all duration-300">Send Message</button>
+            </form>
+            <div class="mt-12 text-center text-slate-600">
+                <p class="text-lg">You can also reach us directly at:</p>
+                <a href="mailto:handsofhope.ut@gmail.com" class="text-red-600 font-semibold text-xl hover:underline">handsofhope.ut@gmail.com</a>
+            </div>
+        </div>
     </div>
 </section>
 
 <!-- Footer -->
-<footer class="bg-red-700 text-white text-center p-6">
-    <p>&copy; 2025 Hands of Hope. All rights reserved.</p>
+<footer class="bg-slate-800 text-slate-400">
+    <div class="max-w-7xl mx-auto px-6 py-12">
+        <div class="flex flex-col md:flex-row justify-between items-center space-y-8 md:space-y-0">
+            <div class="text-center md:text-left">
+                <p class="font-bold text-white text-lg">Hands of Hope</p>
+                <p>&copy; 2025 A 501(c)(3) Nonprofit Organization.</p>
+            </div>
+            <div class="flex space-x-6">
+                <!-- Replace '#' with your actual social media links -->
+                <a href="#" target="_blank" class="text-slate-400 hover:text-white transition-colors duration-300">
+                    <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M12.315 2c-4.04.002-4.482.018-6.055.088-1.573.07-2.658.34-3.608.75-1.02.448-1.855 1.28-2.298 2.302-.44.95-.71 2.035-.783 3.608C-.018 7.833 0 8.273 0 12.315s.018 4.482.088 6.055c.07 1.573.34 2.658.75 3.608.448 1.02 1.28 1.855 2.302 2.298.95.44 2.035.71 3.608.783 1.573.07 2.015.088 6.055.088s4.482-.018 6.055-.088c1.573-.07 2.658-.34 3.608-.75 1.02-.448 1.855-1.28 2.298-2.302.44-.95.71-2.035.783-3.608.07-1.573.088-2.015.088-6.055s-.018-4.482-.088-6.055c-.07-1.573-.34-2.658-.75-3.608C20.912 2.43 20.077 1.6 19.055 1.15c-.95-.44-2.035-.71-3.608-.783C13.873 2.018 13.433 2 12.315 2zm0 1.802c4.002 0 4.418.015 5.97.085 1.4.063 2.203.323 2.8.575.72.303 1.25.78 1.765 1.292.515.515.99 1.045 1.292 1.765.252.597.512 1.4.575 2.8.07 1.552.085 1.968.085 5.97s-.015 4.418-.085 5.97c-.063 1.4-.323 2.203-.575 2.8-.303.72-.78 1.25-1.292 1.765-.515.515-1.045.99-1.765 1.292-.597.252-1.4.512-2.8.575-1.552.07-1.968.085-5.97.085s-4.418-.015-5.97-.085c-1.4-.063-2.203-.323-2.8-.575-.72-.303-1.25-.78-1.765-1.292-.515-.515-.99-1.045-1.292-1.765-.252-.597-.512-1.4-.575-2.8-.07-1.552-.085-1.968-.085-5.97s.015-4.418.085-5.97c.063-1.4.323-2.203.575-2.8.303-.72.78-1.25 1.292-1.765.515-.515 1.045.99 1.765-1.292.597-.252 1.4-.512 2.8-.575C7.897 3.817 8.313 3.802 12.315 3.802zM12 7.04c-2.73 0-4.96 2.23-4.96 4.96s2.23 4.96 4.96 4.96 4.96-2.23 4.96-4.96-2.23-4.96-4.96-4.96zm0 8.118c-1.74 0-3.158-1.417-3.158-3.158S10.26 8.842 12 8.842s3.158 1.417 3.158 3.158-1.417 3.158-3.158 3.158zm4.808-8.338a1.163 1.163 0 100-2.326 1.163 1.163 0 000 2.326z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="sr-only">Instagram</span>
+                </a>
+                <a href="#" target="_blank" class="text-slate-400 hover:text-white transition-colors duration-300">
+                    <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="sr-only">Facebook</span>
+                </a>
+            </div>
+        </div>
+    </div>
 </footer>
+
+<script>
+    // JavaScript for scroll animations
+    document.addEventListener("DOMContentLoaded", () => {
+        const animatedElements = document.querySelectorAll('.scroll-animate');
+
+        if ("IntersectionObserver" in window) {
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1 // Trigger when 10% of the element is visible
+            });
+
+            animatedElements.forEach(el => {
+                observer.observe(el);
+            });
+        } else {
+            // Fallback for older browsers
+            animatedElements.forEach(el => {
+                el.classList.add('is-visible');
+            });
+        }
+    });
+</script>
+
 </body>
 </html>
